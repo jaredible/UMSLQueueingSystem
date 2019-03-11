@@ -1,0 +1,10 @@
+# dependencies
+node_modules/
+
+# misc
+.DS_Store
+public/.DS_Store
+
+# private
+private.json
+.well-known

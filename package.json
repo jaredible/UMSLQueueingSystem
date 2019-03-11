@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/Jaredible/UMSLQueueingSystem/issues"
   },
-  "homepage": "https://github.com/Jaredible/UMSLQueueingSystem#readme"
+  "homepage": "https://github.com/Jaredible/UMSLQueueingSystem#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "ejs-locals": "^1.0.2",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.18"
+  }
 }
