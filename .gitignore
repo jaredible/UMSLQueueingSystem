@@ -4,6 +4,7 @@ node_modules/
 # misc
 .DS_Store
 public/.DS_Store
+.idea/
 
 # private
 private.json
