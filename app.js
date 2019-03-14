@@ -13,7 +13,7 @@ const ENV = app.get('env');
 app.engine('ejs', engine);
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
-// TESTING
+
 app.get('/', (req, res) => {
   res.render('index');
 });
