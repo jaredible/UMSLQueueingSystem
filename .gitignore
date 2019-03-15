@@ -2,9 +2,9 @@
 node_modules/
 
 # misc
-.DS_Store
-public/.DS_Store
+*.DS_Store
 .idea/
+*.code-workspace
 
 # private
 private.json
