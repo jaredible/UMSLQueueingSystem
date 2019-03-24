@@ -35,7 +35,7 @@ npm install
 ## Deployment
 
 * Verify MongoDB is running on default port 27017.
-* Execute bin/www.
+* Execute bin/www
 
 ## Build With
 
