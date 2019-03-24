@@ -62,7 +62,7 @@ node bin/www
 * [express-validator](https://www.npmjs.com/package/express-validator)
 * [morgan](https://www.npmjs.com/package/morgan)
 * [serve-favicon](https://www.npmjs.com/package/serve-favicon)
-* [Mongoose](https://www.npmjs.com/package/mongoose)
+* [mongoose](https://www.npmjs.com/package/mongoose)
 
 ## Authors
 * **Jared Diehl** - *Project Lead* - [Jaredible](https://github.com/Jaredible)
