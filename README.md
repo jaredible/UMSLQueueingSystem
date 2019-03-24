@@ -51,7 +51,7 @@ node bin/www
 * [Node.js](https://nodejs.org)
 * [MongoDB](https://www.mongodb.com)
 
-### Dependencies
+### Node.js Dependencies
 
 * [body-parser](https://www.npmjs.com/package/body-parser)
 * [cookie-parser](https://www.npmjs.com/package/cookie-parser)
