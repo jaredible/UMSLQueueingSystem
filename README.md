@@ -1,4 +1,4 @@
-# UMSLQueueingSystem
+# UMSL's Art Department Queueing System
 
 This queueing system's purpose is to help facilitate the art departments resource scheduling.
 
