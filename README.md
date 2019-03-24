@@ -8,7 +8,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-* [Git](https://git-scm.com) - Git
+* [Git](https://git-scm.com) - Version Control System
+* [NPM and Node.js](https://www.npmjs.com/get-npm) - Node Package Manager and a Javascript runtime
+* [MongoDB](https://www.mongodb.com/download-center/community) - Database
 
 ### Installing
 
