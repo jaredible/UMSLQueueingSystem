@@ -50,5 +50,7 @@ node bin/www
 
 ## Authors
 * **Jared Diehl** - *Project Lead* - [Jaredible](https://github.com/Jaredible)
+*TODO*
 
 ## Acknowledgments
+*TODO*
