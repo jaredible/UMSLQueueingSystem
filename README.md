@@ -8,6 +8,12 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
+* Git [https://git-scm.com] - Git
+
+### Installing
+
+Clone the repository to your machine.
+
 ```
-npm install
+git clone https://github.com/Jaredible/UMSLArtQueueingSystem.git
 ```
