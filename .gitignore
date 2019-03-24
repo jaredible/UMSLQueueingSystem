@@ -1,10 +1,7 @@
 # dependencies
-node_modules/
+/node_modules
 
 # misc
 *.DS_Store
-.idea/
+/.idea
 *.code-workspace
-
-# private
-private.json

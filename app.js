@@ -1,52 +1,66 @@
+const config = require('./config');
 const express = require('express');
-const engine = require('ejs-locals');
 const path = require('path');
-const process = require('process');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const hbs = require('express-handlebars');
+const expressValidator = require('express-validator');
+const expressSession = require('express-session');
+
+const routes = require('./routes/index');
 
 const app = express();
-const server = require('http').Server(app);
 
-const PORT = process.env.port || 5000;
-const HOST = process.env.host || 'localhost';
-const ENV = app.get('env');
+app.engine('hbs', hbs({
+  extname: 'hbs',
+  defaultLayout: 'layout',
+  layoutsDir: __dirname + '/views/layouts',
+  partialsDir: __dirname + '/views/partials'
+}));
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'hbs');
 
-app.engine('ejs', engine);
-app.set('view engine', 'ejs');
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(expressValidator());
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(expressSession({
+  secret: 'AQS',
+  saveUninitialized: false,
+  resave: false
+}));
 
-app.get('/', (req, res) => {
-  res.render('index');
-});
+app.use('/', routes);
 
-// TODO
 app.use((req, res, next) => {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
 });
 
-// TODO
 if (app.get('env') === 'development') {
-    app.use((err, req, res, next) => {
-        res.status(err.status || 500);
-        res.render('error', {
-            status: err.status,
-            message: err.message,
-            error: err
-        });
-    });
-}
-
-// TODO
-app.use((err, req, res, next) => {
+  app.use((err, req, res, next) => {
     res.status(err.status || 500);
     res.render('error', {
-        status: err.status,
-        message: err.message,
-        error: {}
+      message: err.message,
+      error: err
     });
+  });
+}
+
+app.use((err, req, res, next) => {
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message,
+    error: {}
+  });
 });
 
-server.listen(PORT, HOST, () => {
-  console.log(`${ENV.charAt(0).toUpperCase() + ENV.substring(1)} app listening at http://${server.address().address}:${server.address().port}`);
-});
+module.exports = app;

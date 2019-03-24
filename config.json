@@ -1,0 +1,5 @@
+{
+  "MONGO_URL": "mongodb://localhost:27017/aqs",
+  "MONGO_USERNAME": "username",
+  "MONGO_PASSWORD": "password"
+}
