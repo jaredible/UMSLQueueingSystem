@@ -1,6 +1,6 @@
 # UMSL's Art Department Queueing System
 
-This queueing system's purpose is to help facilitate the art departments resource scheduling.
+The purpose of this is to help facilitate the art departments resource scheduling.
 
 ## Getting Started
 
