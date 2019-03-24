@@ -32,7 +32,7 @@ Install the required dependencies.
 npm install
 ```
 
-![Install](readme/images/terminal.gif)
+![Install](readme/images/install.gif)
 
 ## Deployment
 
