@@ -31,3 +31,22 @@ Installed the required dependencies.
 ```
 npm install
 ```
+
+## Deployment
+
+Verify MongoDB is running on default port 27017.
+
+Using default node:
+```
+node bin/www
+```
+Using nodemon:
+```
+nodemon bin/www
+```
+
+## Build With
+
+## Authors
+
+## Acknowledgments
