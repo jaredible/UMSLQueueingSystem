@@ -65,7 +65,7 @@ node bin/www
 * [serve-favicon](https://www.npmjs.com/package/serve-favicon)
 
 ### MongoDB Users
-*Todo*
+* *Todo*
 
 ## Authors
 * **Jared Diehl** - *Project Lead* - [Jaredible](https://github.com/Jaredible)
