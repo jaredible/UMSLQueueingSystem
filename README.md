@@ -19,3 +19,15 @@ Clone the repository to your machine.
 ```
 git clone https://github.com/Jaredible/UMSLArtQueueingSystem.git
 ```
+
+Change your directory to the download folder.
+
+```
+cd UMSLArtQueueingSystem
+```
+
+Installed the required dependencies.
+
+```
+npm install
+```
