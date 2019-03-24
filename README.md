@@ -26,7 +26,7 @@ Change your directory to the download folder.
 cd UMSLArtQueueingSystem
 ```
 
-Installed the required dependencies.
+Install the required dependencies.
 
 ```
 npm install
@@ -40,5 +40,6 @@ npm install
 ## Build With
 
 ## Authors
+* **Jared Diehl** - *Initial work*
 
 ## Acknowledgments
