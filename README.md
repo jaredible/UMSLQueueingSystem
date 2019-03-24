@@ -48,6 +48,11 @@ node bin/www
 
 ## Built With
 
+* [Node.js](https://nodejs.org/en/)
+* [Express](https://expressjs.com)
+* [Mongoose](https://mongoosejs.com)
+* [Handlebars](https://www.npmjs.com/package/express-handlebars)
+
 ## Authors
 * **Jared Diehl** - *Project Lead* - [Jaredible](https://github.com/Jaredible)
 * *More coming soon...*
