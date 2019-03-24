@@ -40,6 +40,6 @@ npm install
 ## Build With
 
 ## Authors
-* **Jared Diehl** - *Project Manager*
+* **Jared Diehl** - *Project Lead* - [Jaredible](https://github.com/Jaredible)
 
 ## Acknowledgments
