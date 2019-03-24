@@ -8,7 +8,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-* Git [https://git-scm.com] - Git
+* Git [Git](https://git-scm.com) - Git
 
 ### Installing
 
