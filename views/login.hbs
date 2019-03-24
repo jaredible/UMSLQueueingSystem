@@ -1,27 +1,11 @@
-<h1>{{title}}</h1>
-{{# if success}}
-  <section class="success">
-    <h2>Successful Validation!</h2>
-  </section>
-{{else}}
-    {{# if errors}}
-      <section class="errors">
-        <ul>
-          {{# each errors}}
-            <li>{{this.msg}}</li>
-          {{/each}}
-        </ul>
-      </section>
-    {{/if}}
-    <form class="" action="/login" method="post">
-      <div class="input">
-        <label for="email">Email</label>
-        <input type="text" name="email" value="email">
-      </div>
-      <div class="input">
-        <label for="password">Password</label>
-        <input type="password" name="password" value="password">
-      </div>
-      <button type="submit">Login</button>
-    </form>
-{{/if}}
+<form action="/login" method="post">
+  <div class="input">
+    <span class="error">{{errorEmail}}</span>
+    <input type="text" name="email" value="{{email}}" placeholder="Email">
+  </div>
+  <div class="input">
+    <span class="error">{{errorPassword}}</span>
+    <input type="password" name="password" placeholder="Password">
+  </div>
+  <button type="submit">Login</button>
+</form>

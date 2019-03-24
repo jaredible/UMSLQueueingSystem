@@ -5,7 +5,7 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const hbs = require('express-handlebars');
+const exphbs = require('express-handlebars');
 const expressValidator = require('express-validator');
 const expressSession = require('express-session');
 
@@ -13,7 +13,7 @@ const routes = require('./routes/index');
 
 const app = express();
 
-app.engine('hbs', hbs({
+app.engine('hbs', exphbs({
   extname: 'hbs',
   defaultLayout: 'layout',
   layoutsDir: __dirname + '/views/layouts',

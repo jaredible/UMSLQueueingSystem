@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", Ariel, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+.error {
+  color: red;
+}

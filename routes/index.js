@@ -15,16 +15,41 @@ router.get('/', (req, res, next) => {
   });
 });
 
-router.get('/login', (req, res, next) => {
+router.all('/login', (req, res, next) => {
+  var email = '';
+  var errorEmail = '';
+  var errorPassword = '';
+
+  if (req.method === 'POST') {
+    email = req.body.email;
+
+    req.check('email', 'Invalid email address.').isEmail();
+    req.check('password', 'Password is invalid.').isLength({min: 4});
+
+    var errors = req.validationErrors();
+    if (errors) {
+      if (errors[0].param === 'email') {
+        errorEmail = errors[0].msg;
+      }
+      if (errors[0].param === 'password') {
+        errorPassword = errors[0].msg;
+      }
+    } else {
+      res.redirect('/');
+      return;
+    }
+  }
+
   res.render('login', {
     title: 'Login',
-    success: req.session.success,
-    errors: req.session.errors
+    email: email,
+    errorEmail: errorEmail,
+    errorPassword: errorPassword
   });
-  req.session.errors = null;
 });
 
 router.post('/login', (req, res, next) => {
+  console.log(req.method);
   req.check('email', 'Invalid email address.').isEmail();
   req.check('password', 'Password is invalid.').isLength({min: 4});
 
@@ -34,9 +59,15 @@ router.post('/login', (req, res, next) => {
     req.session.success = false;
   } else {
     req.session.success = true;
+    res.redirect('/');
   }
 
-  res.redirect('/login');
+  res.render('login', {
+    title: 'Login',
+    success: req.session.success,
+    errors: req.session.errors
+  });
+  req.session.errors = null;
 });
 
 router.get('/queue', (req, res, next) => {
