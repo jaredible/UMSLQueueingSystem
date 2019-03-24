@@ -48,10 +48,21 @@ node bin/www
 
 ## Built With
 
-* [Node.js](https://nodejs.org/en/)
-* [Express](https://expressjs.com)
-* [Mongoose](https://mongoosejs.com)
-* [Handlebars](https://www.npmjs.com/package/express-handlebars)
+* [Node.js](https://nodejs.org)
+* [MongoDB](https://www.mongodb.com)
+
+### Dependencies
+
+* [body-parser](https://www.npmjs.com/package/body-parser)
+* [cookie-parser](https://www.npmjs.com/package/cookie-parser)
+* [express](https://www.npmjs.com/package/express)
+* [debug](https://www.npmjs.com/package/debug)
+* [express-handlebars](https://www.npmjs.com/package/express-handlebars)
+* [express-session](https://www.npmjs.com/package/express-session)
+* [express-validator](https://www.npmjs.com/package/express-validator)
+* [morgan](https://www.npmjs.com/package/morgan)
+* [serve-favicon](https://www.npmjs.com/package/serve-favicon)
+* [Mongoose](https://www.npmjs.com/package/mongoose)
 
 ## Authors
 * **Jared Diehl** - *Project Lead* - [Jaredible](https://github.com/Jaredible)
