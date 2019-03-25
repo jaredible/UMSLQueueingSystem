@@ -9,7 +9,9 @@ const exphbs = require('express-handlebars');
 const expressValidator = require('express-validator');
 const expressSession = require('express-session');
 
-const index = require('./routes/index');
+const indexRouter = require('./routes/index');
+const loginRouter = require('./routes/login');
+const reserveRouter = require('./routes/reserve');
 
 const app = express();
 
@@ -37,7 +39,9 @@ app.use(expressSession({
   resave: false
 }));
 
-app.use('/', index);
+app.use('/', indexRouter);
+app.use('/login', loginRouter);
+app.use('/reserve', reserveRouter);
 
 app.use((req, res, next) => {
   var err = new Error('Not Found');

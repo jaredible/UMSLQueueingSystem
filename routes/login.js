@@ -3,10 +3,10 @@ const express = require('express');
 const router = express.Router();
 
 // Require controller modules.
-const homeController = require('../controllers/homeController');
+const loginController = require('../controllers/loginController');
 
-/// HOME ROUTES ///
+/// LOGIN ROUTES ///
 
-router.get('/', homeController.index);
+router.all('/', loginController.index);
 
 module.exports = router;
