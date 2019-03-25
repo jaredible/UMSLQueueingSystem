@@ -44,8 +44,6 @@ Start the Node.js server.
 npm run dev
 ```
 
-![Deploy](readme/images/execute.gif)
-
 ## Built With
 
 * [AWS](https://aws.amazon.com)
