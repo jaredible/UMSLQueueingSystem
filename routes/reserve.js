@@ -1,20 +1,9 @@
 const routeConfig = require('../configurations/routes');
-const mongoConfig = require('../configurations/mongodb');
 const express = require('express');
 const router = express.Router();
-const mongoose = require('mongoose');
-// TODO: authentication
-mongoose.connect(mongoConfig.MONGO_URL, {
-  useNewUrlParser: true
-});
-mongoose.set('useCreateIndex', true);
-const reservationSchema = require('../reservationSchema');
-const Reservation = mongoose.model('Reservation', reservationSchema);
-
-const aws = require('aws-sdk');
 
 // Require controller modules.
-const reserveContoller = require('../controllers/reserveController');
+const reserveContoller = require('../controllers/reservationController');
 
 /// RESERVE ROUTES ///
 

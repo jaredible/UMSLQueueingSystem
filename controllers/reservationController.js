@@ -1,3 +1,5 @@
+const Reservation = require('../models/reservation');
+
 exports.index = (req, res) => {
   // TODO: ensure type exists and use specific types
   var params = req.params;
