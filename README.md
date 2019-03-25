@@ -70,7 +70,11 @@ npm run dev
 *Todo*
 
 ## Authors
+* **Alberto Flores** - *TODO* - [TODO]()
 * **Jared Diehl** - *Project Lead* - [Jaredible](https://github.com/Jaredible)
+* **Cole Alves** - *TODO* - [TODO]()
+* **Erin Corteville** - *TODO* - [TODO]()
+* **Kate Lee** - *TODO* - [TODO]()
 * *More coming soon...*
 
 ## Acknowledgments
