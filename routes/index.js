@@ -2,6 +2,7 @@ const config = require('../config');
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+// TODO: authentication
 mongoose.connect(config.MONGO_URL, {
   useNewUrlParser: true
 });
@@ -9,12 +10,28 @@ mongoose.set('useCreateIndex', true);
 const reservationSchema = require('../reservationSchema');
 const Reservation = mongoose.model('Reservation', reservationSchema);
 
+// INFO: Index page has customizeable data. Home and 2D selection pages have same layout but different data.
+
 router.get('/', (req, res, next) => {
-  res.render('index', {
-    title: 'Home'
+  res.render('selection', {
+    title: 'Home',
+    selections: [{
+        key: '2d',
+        value: '2D'
+      },
+      {
+        key: '3d',
+        value: '3D'
+      },
+      {
+        key: 'photolab',
+        value: 'Photo Lab'
+      }
+    ]
   });
 });
 
+// TODO: API
 router.all('/login', (req, res, next) => {
   var email = '';
   var errorEmail = '';
@@ -24,15 +41,21 @@ router.all('/login', (req, res, next) => {
     email = req.body.email;
 
     req.check('email', 'Invalid email address.').isEmail();
-    req.check('password', 'Password is invalid.').isLength({min: 4});
+    req.check('password', 'Password is invalid.').isLength({
+      min: 4
+    });
 
     var errors = req.validationErrors();
     if (errors) {
-      if (errors[0].param === 'email') {
-        errorEmail = errors[0].msg;
-      }
-      if (errors[0].param === 'password') {
-        errorPassword = errors[0].msg;
+      for (let i = 0; i < errors.length; i++) {
+        let error = errors[i];
+
+        if (error.param === 'email') {
+          errorEmail = error.msg;
+        }
+        if (error.param === 'password') {
+          errorPassword = error.msg;
+        }
       }
     } else {
       res.redirect('/');
@@ -48,32 +71,52 @@ router.all('/login', (req, res, next) => {
   });
 });
 
-router.post('/login', (req, res, next) => {
-  console.log(req.method);
-  req.check('email', 'Invalid email address.').isEmail();
-  req.check('password', 'Password is invalid.').isLength({min: 4});
+// TODO: ensure type exists and use specific types
+router.all('/reserve/:type', (req, res, next) => {
+  var params = req.params;
+  if (params.type !== '') {
+    var type = params.type.toLowerCase();
 
-  var errors = req.validationErrors();
-  if (errors) {
-    req.session.errors = errors;
-    req.session.success = false;
+    if (req.method === 'POST') {
+      res.redirect('/');
+    } else {
+      switch (type) {
+        case '2d':
+          res.render('selection', {
+            title: '2D Print Type Selection',
+            selections: [{
+                key: 'inkjet',
+                value: 'Inkjet'
+              },
+              {
+                key: 'laser',
+                value: 'Laser'
+              },
+              {
+                key: 'large',
+                value: 'Large'
+              }
+            ]
+          });
+          break;
+        case '3d':
+        case 'photolab':
+        case 'inkjet':
+        case 'laser':
+        case 'large':
+          res.render('reserve', {
+            title: 'Reserve',
+            type: req.params.type
+          });
+          break;
+        default:
+          res.redirect('/');
+          break;
+      }
+    }
   } else {
-    req.session.success = true;
     res.redirect('/');
   }
-
-  res.render('login', {
-    title: 'Login',
-    success: req.session.success,
-    errors: req.session.errors
-  });
-  req.session.errors = null;
-});
-
-router.get('/queue', (req, res, next) => {
-  res.render('Queue', {
-    title: 'Queue'
-  });
 });
 
 module.exports = router;

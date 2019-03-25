@@ -9,13 +9,13 @@ const exphbs = require('express-handlebars');
 const expressValidator = require('express-validator');
 const expressSession = require('express-session');
 
-const routes = require('./routes/index');
+const index = require('./routes/index');
 
 const app = express();
 
 app.engine('hbs', exphbs({
   extname: 'hbs',
-  defaultLayout: 'layout',
+  defaultLayout: 'main',
   layoutsDir: __dirname + '/views/layouts',
   partialsDir: __dirname + '/views/partials'
 }));
@@ -37,7 +37,7 @@ app.use(expressSession({
   resave: false
 }));
 
-app.use('/', routes);
+app.use('/', index);
 
 app.use((req, res, next) => {
   var err = new Error('Not Found');
