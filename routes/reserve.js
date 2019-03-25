@@ -1,9 +1,10 @@
-const config = require('../config');
+const routeConfig = require('../configurations/routes');
+const mongoConfig = require('../configurations/mongodb');
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 // TODO: authentication
-mongoose.connect(config.MONGO_URL, {
+mongoose.connect(mongoConfig.MONGO_URL, {
   useNewUrlParser: true
 });
 mongoose.set('useCreateIndex', true);
