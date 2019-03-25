@@ -54,6 +54,7 @@ node bin/www
 
 ### Node.js Dependencies
 
+* [aws-sdk](https://aws.amazon.com/sdk-for-node-js/)
 * [body-parser](https://www.npmjs.com/package/body-parser)
 * [cookie-parser](https://www.npmjs.com/package/cookie-parser)
 * [debug](https://www.npmjs.com/package/debug)
