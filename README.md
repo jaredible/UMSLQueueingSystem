@@ -41,7 +41,7 @@ npm install
 Start the Node.js server.
 
 ```
-node bin/www
+npm run dev
 ```
 
 ![Deploy](readme/images/execute.gif)
