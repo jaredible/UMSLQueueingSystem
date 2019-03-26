@@ -4,10 +4,6 @@
   "description": "A queueing system to help facilitate the art departments resource scheduling.",
   "main": "bin/www",
   "scripts": {
-    "dev": "node bin/www",
-    "nmdev": "nodemon bin/www",
-    "prod": "node bin/www",
-    "nmprod": "nodemon bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -32,6 +32,12 @@ Install the required dependencies.
 npm install
 ```
 
+Install nodemon.
+
+```
+npm i -g nodemon
+```
+
 ![Install](readme/images/install.gif)
 
 ## Deployment
@@ -41,7 +47,7 @@ npm install
 Start the Node.js server.
 
 ```
-npm run dev
+nodemon app
 ```
 
 ## Built With
