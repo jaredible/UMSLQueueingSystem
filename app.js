@@ -8,9 +8,9 @@ const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
 const expressSession = require('express-session');
 
-const optionsRouter = require('./routes/options');
-const loginRouter = require('./routes/login');
-const reserveRouter = require('./routes/reserve');
+const indexRouter = require('./routes/index');
+const accountRouter = require('./routes/account');
+const reservationRouter = require('./routes/reservation');
 
 const app = express();
 
@@ -32,9 +32,9 @@ app.use(expressSession({
   resave: false
 }));
 
-app.use('/', optionsRouter);
-app.use('/login', loginRouter);
-app.use('/reserve', reserveRouter);
+app.use('/', indexRouter);
+app.use('/account', accountRouter);
+app.use('/reservation', reservationRouter);
 
 app.use((req, res, next) => {
   var err = new Error('Not Found');

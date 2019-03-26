@@ -29,3 +29,6 @@ exports.index = (req, res) => {
     res.redirect('/');
   }
 };
+
+
+// will handle data saving stuff and confirmation stuffs

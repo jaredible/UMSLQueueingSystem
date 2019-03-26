@@ -37,3 +37,5 @@ exports.index = (req, res) => {
     passwordError: passwordError
   });
 };
+
+// will handle user related stuff like login
