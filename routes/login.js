@@ -9,4 +9,6 @@ const loginController = require('../controllers/loginController');
 
 router.all('/', loginController.index);
 
+// TESTING
+
 module.exports = router;
