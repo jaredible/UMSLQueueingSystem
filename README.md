@@ -57,11 +57,11 @@ npm run dev
 * [cookie-parser](https://www.npmjs.com/package/cookie-parser)
 * [debug](https://www.npmjs.com/package/debug)
 * [express](https://www.npmjs.com/package/express)
-* [express-handlebars](https://www.npmjs.com/package/express-handlebars)
 * [express-session](https://www.npmjs.com/package/express-session)
 * [express-validator](https://www.npmjs.com/package/express-validator)
 * [mongoose](https://www.npmjs.com/package/mongoose)
 * [morgan](https://www.npmjs.com/package/morgan)
+* [pug](https://pugjs.org/api/getting-started.html)
 * [serve-favicon](https://www.npmjs.com/package/serve-favicon)
 
 ### MongoDB Users
