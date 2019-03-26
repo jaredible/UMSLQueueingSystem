@@ -7,7 +7,7 @@ exports.index = (req, res) => {
     var type = params.type.toLowerCase();
 
     if (req.method === 'POST') {
-      res.redirect('/');
+      res.redirect('/reserve/' + type + '/confirmation');
     } else {
       switch (type) {
         case '3d':
