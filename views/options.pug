@@ -1,0 +1,10 @@
+extends layouts/main.pug
+
+block head
+
+block content
+  each option in options
+    li
+      a(href=option.link) #{option.text}
+
+block scripts

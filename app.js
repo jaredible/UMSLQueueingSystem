@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
 const expressSession = require('express-session');
 
-const indexRouter = require('./routes/index');
+const optionsRouter = require('./routes/options');
 const loginRouter = require('./routes/login');
 const reserveRouter = require('./routes/reserve');
 
@@ -32,7 +32,7 @@ app.use(expressSession({
   resave: false
 }));
 
-app.use('/', indexRouter);
+app.use('/', optionsRouter);
 app.use('/login', loginRouter);
 app.use('/reserve', reserveRouter);
 

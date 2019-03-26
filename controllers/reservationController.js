@@ -10,24 +10,6 @@ exports.index = (req, res) => {
       res.redirect('/');
     } else {
       switch (type) {
-        case '2d':
-          res.render('selection', {
-            title: '2D Print Type Selection',
-            selections: [{
-                key: 'inkjet',
-                value: 'Inkjet'
-              },
-              {
-                key: 'laser',
-                value: 'Laser'
-              },
-              {
-                key: 'large',
-                value: 'Large'
-              }
-            ]
-          });
-          break;
         case '3d':
         case 'photolab':
         case 'inkjet':
