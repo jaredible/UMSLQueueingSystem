@@ -1,0 +1,15 @@
+extends layouts/main.pug
+
+block head
+
+block content
+  form(action='/login', method='post')
+    div
+      span(class='error') #{emailError}
+      input(type='text', name='email', value=email, placeholder='Email', autofocus)
+    div
+      span(class='error') #{passwordError}
+      input(type='text', name='password', placeholder='Password')
+    button(type='submit') Log In
+
+block scripts

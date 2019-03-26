@@ -5,7 +5,6 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const exphbs = require('express-handlebars');
 const expressValidator = require('express-validator');
 const expressSession = require('express-session');
 
@@ -15,14 +14,8 @@ const reserveRouter = require('./routes/reserve');
 
 const app = express();
 
-app.engine('hbs', exphbs({
-  extname: 'hbs',
-  defaultLayout: 'main',
-  layoutsDir: __dirname + '/views/layouts',
-  partialsDir: __dirname + '/views/partials'
-}));
+app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));

@@ -1,0 +1,16 @@
+extends layouts/main.pug
+
+block head
+
+block content
+  | Type: #{type}
+  form(action='/reserve/' + type, method='post')
+    div
+      input(type='date', name='date', placeholder='Date')
+    div
+      input(type='time', name='time', placeholder='Time')
+    div
+      input(type='file', name='files', accept='*', multiple)
+    button(type='submit') Reserve
+
+block scripts

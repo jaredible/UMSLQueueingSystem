@@ -1,0 +1,10 @@
+extends layouts/main.pug
+
+block head
+
+block content
+  each selection in selections
+    li
+      a(href='/reserve/' + selection.key) #{selection.value}
+
+block scripts
