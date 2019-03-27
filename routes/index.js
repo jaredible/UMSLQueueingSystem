@@ -1,13 +1,9 @@
-const routeConfig = require('../configurations/routes');
 const express = require('express');
 const router = express.Router();
 
-// Require controller modules.
-const optionsController = require('../controllers/optionsController');
+const homeController = require('../controllers/homeController');
 
-/// OPTIONS ROUTES ///
-
-router.get('/', optionsController.printTypesAll);
-router.get('/2d', optionsController.printTypes2D);
+router.get('/', homeController.index);
+router.get('/2d', homeController.index);
 
 module.exports = router;

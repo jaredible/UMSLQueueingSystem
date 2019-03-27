@@ -1,4 +1,3 @@
-const appConfig = require('./configurations/app');
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
@@ -59,5 +58,18 @@ app.use((err, req, res, next) => {
     error: {}
   });
 });
+
+const config = require('./config/ui/selections');
+
+var hrefs = Object.keys(config); // array of hrefs
+console.log(hrefs);
+
+var selections = Object.keys(config[hrefs[0]]);
+console.log(selections);
+
+var obj = Object.keys(config[hrefs[0]][selections[0]]);
+console.log(obj);
+var vals = Object.values(config[hrefs[0]][selections[0]]);
+console.log(vals);
 
 module.exports = app;

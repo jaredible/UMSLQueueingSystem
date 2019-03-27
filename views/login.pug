@@ -1,6 +1,7 @@
 extends layouts/main.pug
 
 block head
+    link(rel='stylesheet', href='/css/login.css')
 
 block content
   form(action='/login', method='post')
@@ -13,3 +14,4 @@ block content
     button(type='submit') Log In
 
 block scripts
+    script(src='/js/login.js')

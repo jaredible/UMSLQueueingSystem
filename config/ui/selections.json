@@ -1,0 +1,36 @@
+{
+    "/": {
+        "2d": {
+            "href": "/2d",
+            "title": "2D",
+            "description": ""
+        },
+        "3d": {
+            "href": "/reservation/3d",
+            "title": "3D",
+            "description": ""
+        },
+        "photolab": {
+            "href": "/reservation/photolab",
+            "title": "Photo Lab",
+            "description": ""
+        }
+    },
+    "/2d": {
+        "inkjet": {
+            "href": "/reservation/inkjet",
+            "title": "InkJet",
+            "description": ""
+        },
+        "large": {
+            "href": "/reservation/large",
+            "title": "Large",
+            "description": ""
+        },
+        "laser": {
+            "href": "/reservation/laser",
+            "title": "Laser",
+            "description": ""
+        }
+    }
+}

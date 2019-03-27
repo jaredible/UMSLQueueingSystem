@@ -1,12 +1,12 @@
-const mongoConfig = require('../configurations/mongodb');
-const awsConfig = require('../configurations/aws');
+const mongoConfig = require('../config/db/mongodb');
+const awsConfig = require('../config/db/aws');
 const mongoose = require('mongoose');
 // TODO: authentication
 mongoose.connect(mongoConfig.MONGO_URL, {
   useNewUrlParser: true
 });
 mongoose.set('useCreateIndex', true);
-const reservationSchema = require('../schema/reservationSchema');
+const reservationSchema = require('../config/db/reservationSchema');
 const Reservation = mongoose.model('Reservation', reservationSchema);
 
 const AWS = require('aws-sdk');

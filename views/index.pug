@@ -1,6 +1,7 @@
 extends layouts/main.pug
 
 block head
+    link(rel='stylesheet', href='/css/index.css')
 
 block content
   each option in options
@@ -8,3 +9,4 @@ block content
       a(href=option.link) #{option.text}
 
 block scripts
+    script(src='/js/index.js')

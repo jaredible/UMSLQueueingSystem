@@ -1,6 +1,7 @@
 extends layouts/main.pug
 
 block head
+    link(rel='stylesheet', href='/css/reservation.css')
 
 block content
   | Type: #{type}
@@ -14,3 +15,4 @@ block content
     button(type='submit') Reserve
 
 block scripts
+    script(src='/js/reservation.js')
