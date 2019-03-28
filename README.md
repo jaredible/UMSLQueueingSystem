@@ -8,34 +8,34 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-* [Git](https://git-scm.com) - Version Control System
-* [NPM and Node.js](https://www.npmjs.com/get-npm) - Node Package Manager and a Javascript runtime
-* [MongoDB](https://www.mongodb.com/download-center/community) - Database
+* [Git](https://git-scm.com)
+* [NPM and Node.js](https://www.npmjs.com/get-npm)
+* [MongoDB](https://www.mongodb.com/download-center/community)
 
 ### Installing
 
-Clone the repository to your machine.
+Firstly, if you don't already have nodemon.
+
+```
+npm i -g nodemon
+```
+
+Download the repository to your machine.
 
 ```
 git clone https://github.com/Jaredible/UMSLArtQueueingSystem.git
 ```
 
-Change your directory to the download folder.
+Move into the downloaded directory.
 
 ```
 cd UMSLArtQueueingSystem
 ```
 
-Install the required dependencies.
+Download the required dependencies. A node_modules directory is created.
 
 ```
 npm install
-```
-
-Install nodemon.
-
-```
-npm i -g nodemon
 ```
 
 ![Install](readme/images/install.gif)
@@ -78,7 +78,6 @@ nodemon app
 * [Bek]()
 * [Cole Alves](https://github.com/ColeAlves)
 * [Erin Corteville]()
-* [Jaredible](https://github.com/Jaredible)
 * [Kate Lee]()
 * [Safi Khan]()
 

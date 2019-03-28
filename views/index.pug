@@ -1,14 +1,18 @@
 extends layouts/main.pug
 
 block head
-    link(rel='stylesheet', href='/css/index.css')
+  link(rel='stylesheet', href='/css/home.css')
 
 block content
-  if selections
-    each selection in selections
-      li
-        a(href=selection.href) #{selection.title}
-        span #{selection.description}
+  | Type: #{type}
+  form(action='/reserve/' + type, method='post')
+    div
+      input(type='date', name='date', placeholder='Date')
+    div
+      input(type='time', name='time', placeholder='Time')
+    div
+      input(type='file', name='files', accept='*', multiple)
+    button(type='submit') Reserve
 
 block scripts
-    script(src='/js/index.js')
+  script(src='/js/home.js')

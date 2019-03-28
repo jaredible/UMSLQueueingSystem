@@ -9,7 +9,6 @@ const expressSession = require('express-session');
 
 const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
-const reservationRouter = require('./routes/reservation');
 
 const app = express();
 
@@ -33,7 +32,6 @@ app.use(expressSession({
 
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
-app.use('/reservation', reservationRouter);
 
 app.use((req, res, next) => {
   var err = new Error('Not Found');
@@ -58,18 +56,5 @@ app.use((err, req, res, next) => {
     error: {}
   });
 });
-
-const config = require('./config/ui/selections');
-
-var hrefs = Object.keys(config); // array of hrefs
-console.log(hrefs);
-
-var selections = Object.keys(config[hrefs[0]]);
-console.log(selections);
-
-var obj = Object.keys(config[hrefs[0]][selections[0]]);
-console.log(obj);
-var vals = Object.values(config[hrefs[0]][selections[0]]);
-console.log(vals);
 
 module.exports = app;
