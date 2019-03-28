@@ -74,13 +74,13 @@ nodemon app
 *Todo*
 
 ## Authors
-* **Alberto Flores** - [TODO]()
-* **Bek** - [TODO]()
-* **Cole Alves** - [TODO]()
-* **Erin Corteville** - [TODO]()
-* **Jared Diehl** - [Jaredible](https://github.com/Jaredible)
-* **Kate Lee** - [TODO]()
-* **Safi Khan** - [TODO]()
+* [Alberto Flores](https://github.com/afty2)
+* [Bek]()
+* [Cole Alves](https://github.com/ColeAlves)
+* [Erin Corteville]()
+* [Jaredible](https://github.com/Jaredible)
+* [Kate Lee]()
+* [Safi Khan]()
 
 ## Acknowledgments
 *TODO*
