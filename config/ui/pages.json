@@ -1,0 +1,11 @@
+{
+    "/": {
+        "title": "Test1"
+    },
+    "/2d": {
+        "title": "Test2"
+    },
+    "/login": {
+        "title": "Login"
+    }
+}

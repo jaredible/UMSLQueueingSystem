@@ -8,7 +8,7 @@ const expressValidator = require('express-validator');
 const expressSession = require('express-session');
 
 const indexRouter = require('./routes/index');
-const accountRouter = require('./routes/account');
+const loginRouter = require('./routes/login');
 const reservationRouter = require('./routes/reservation');
 
 const app = express();
@@ -32,7 +32,7 @@ app.use(expressSession({
 }));
 
 app.use('/', indexRouter);
-app.use('/account', accountRouter);
+app.use('/login', loginRouter);
 app.use('/reservation', reservationRouter);
 
 app.use((req, res, next) => {

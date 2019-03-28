@@ -1,16 +1,14 @@
-// TODO: refactor?
+const pageConfig = require('../config/ui/pages');
+const selectionsConfig = require('../config/ui/selections');
 
 exports.index = (req, res) => {
-  if (req.url) {
-
-  }
-  
-  var selections = [];
-  
+  // TODO: Should be checking values exist before passing them into view.
   res.render('index', {
-    title: 'Printer Options',
-    selections: selections
+    title: pageConfig[req.url].title,
+    selections: selectionsConfig[req.url.toLowerCase()]
   });
 };
 
-// will handle option selection stuff
+exports.getRoutes = () => {
+  return Object.keys(selectionsConfig);
+};

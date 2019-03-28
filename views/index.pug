@@ -4,9 +4,11 @@ block head
     link(rel='stylesheet', href='/css/index.css')
 
 block content
-  each option in options
-    li
-      a(href=option.link) #{option.text}
+  if selections
+    each selection in selections
+      li
+        a(href=selection.href) #{selection.title}
+        span #{selection.description}
 
 block scripts
     script(src='/js/index.js')

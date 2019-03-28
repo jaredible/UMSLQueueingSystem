@@ -1,3 +1,5 @@
+const pageConfig = require('../config/ui/pages');
+
 exports.index = (req, res) => {
   // TODO: API
   var email = '';
@@ -9,7 +11,7 @@ exports.index = (req, res) => {
 
     req.check('email', 'Invalid email address.').isEmail();
     req.check('password', 'Password is invalid.').isLength({
-      min: 4
+      min: 8
     });
 
     var errors = req.validationErrors();
@@ -31,11 +33,9 @@ exports.index = (req, res) => {
   }
 
   res.render('login', {
-    title: 'Login',
+    title: pageConfig[req.url],
     email: email,
     emailError: emailError,
     passwordError: passwordError
   });
 };
-
-// will handle user related stuff like login
