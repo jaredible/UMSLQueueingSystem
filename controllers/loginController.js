@@ -1,5 +1,3 @@
-const pageConfig = require('../config/ui/pages');
-
 exports.index = (req, res) => {
   // TODO: API
   var email = '';
@@ -33,7 +31,7 @@ exports.index = (req, res) => {
   }
 
   res.render('login', {
-    title: pageConfig[req.url],
+    title: 'Login',
     email: email,
     emailError: emailError,
     passwordError: passwordError

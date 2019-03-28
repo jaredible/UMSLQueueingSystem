@@ -4,8 +4,7 @@ block head
   link(rel='stylesheet', href='/css/home.css')
 
 block content
-  | Type: #{type}
-  form(action='/reserve/' + type, method='post')
+  form(action='/', method='post')
     div
       input(type='date', name='date', placeholder='Date')
     div
