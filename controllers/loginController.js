@@ -31,7 +31,7 @@ exports.index = (req, res) => {
   }
 
   res.render('login', {
-    title: 'Login',
+    title: 'Title',
     email: email,
     emailError: emailError,
     passwordError: passwordError

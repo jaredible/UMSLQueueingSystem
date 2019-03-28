@@ -6,7 +6,7 @@ exports.index = (req, res) => {
   }
 
   res.render('index', {
-    title: 'Reserve',
+    title: 'Title',
     confirmed: confirmed
   });
 };

@@ -6,7 +6,7 @@ mongoose.connect(mongoConfig.MONGO_URL, {
   useNewUrlParser: true
 });
 mongoose.set('useCreateIndex', true);
-const reservationSchema = require('../config/db/reservationSchema');
+const reservationSchema = require('./reservationSchema');
 const Reservation = mongoose.model('Reservation', reservationSchema);
 
 const AWS = require('aws-sdk');

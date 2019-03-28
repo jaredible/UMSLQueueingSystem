@@ -25,13 +25,72 @@ app.use(expressValidator());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(expressSession({
-  secret: 'AQS',
+  key: 'user_sid',
+  secret: 'somerandomstuff',
+  resave: false,
   saveUninitialized: false,
-  resave: false
+  cookie: {
+    expires: 10 * 60 * 1000 // 10 minutes
+  }
 }));
 
-app.use('/', indexRouter);
-app.use('/login', loginRouter);
+app.use((req, res, next) => {
+  if (req.cookies.user_sid && !req.session.user) {
+    res.clearCookie('user_sid');
+  }
+  next();
+});
+
+var sessionChecker = (req, res, next) => {
+  if (req.session.user && req.cookies.user_sid) {
+    res.redirect('/');
+  } else {
+    next();
+  }
+};
+
+app.route('/login').get(sessionChecker, (req, res) => {
+  res.render('login', {
+    title: 'Test',
+    email: '',
+    emailError: '',
+    passwordError: ''
+  });
+}).post((req, res) => {
+  var username = req.body.username;
+  var password = req.body.password;
+
+  req.session.user = {
+    username: 'test',
+    email: 'test',
+    password: 'test'
+  };
+
+  res.redirect('/');
+});
+
+app.get('/', (req, res) => {
+  if (req.session.user && req.cookies.user_sid) {
+    res.render('index', {
+      title: 'Test',
+      confirmed: false
+    });
+  } else {
+    res.redirect('/login');
+  }
+});
+
+app.get('/logout', (req, res) => {
+  if (req.session.user && req.cookies.user_sid) {
+    res.clearCookie('user_sid');
+    res.redirect('/');
+  } else {
+    res.redirect('/login');
+  }
+});
+
+//app.use('/', indexRouter);
+//app.use('/login', loginRouter);
 
 app.use((req, res, next) => {
   var err = new Error('Not Found');
