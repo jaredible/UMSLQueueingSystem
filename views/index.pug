@@ -4,14 +4,17 @@ block head
   link(rel='stylesheet', href='/css/home.css')
 
 block content
-  form(action='/', method='post')
-    div
-      input(type='date', name='date', placeholder='Date')
-    div
-      input(type='time', name='time', placeholder='Time')
-    div
-      input(type='file', name='files', accept='*', multiple)
-    button(type='submit') Reserve
+  unless confirmed
+    form(action='/', method='post')
+      div
+        input(type='date', name='date', placeholder='Date')
+      div
+        input(type='time', name='time', placeholder='Time')
+      div
+        input(type='file', name='files', accept='*', multiple)
+      button(type='submit') Reserve
+  else
+    | Confirmed!
 
 block scripts
   script(src='/js/home.js')

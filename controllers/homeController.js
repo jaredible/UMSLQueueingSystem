@@ -1,15 +1,12 @@
 exports.index = (req, res) => {
+  var confirmed = false;
+
   if (req.method === 'POST') {
-    res.redirect('/confirmation');
+    confirmed = true;
   }
 
   res.render('index', {
-    title: 'Reserve'
-  });
-};
-
-exports.confirmation = (req, res) => {
-  res.render('confirmation', {
-    title: 'Confirmation'
+    title: 'Reserve',
+    confirmed: confirmed
   });
 };
