@@ -1,9 +1,10 @@
 extends layouts/main.pug
 
 block head
-  link(rel='stylesheet', href='/css/home.css')
+  link(rel='stylesheet', href='/css/index.css')
 
 block content
+  a(href='/logout') Log out
   unless confirmed
     form(action='/', method='post')
       div
@@ -11,10 +12,14 @@ block content
       div
         input(type='time', name='time', placeholder='Time')
       div
-        input(type='file', name='files', accept='*', multiple)
+        button(type='submit') Select from Computer
+      div
+        button(type='submit') Select from Google Drive
+      div
+        button(type='submit') Select from Dropbox
       button(type='submit') Reserve
   else
     | Confirmed!
 
 block scripts
-  script(src='/js/home.js')
+  script(src='/js/index.js')
