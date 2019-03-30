@@ -20,6 +20,8 @@ block content
       button(type='submit') Reserve
   else
     | Confirmed!
+  form(action='/test', method='post')
+    button(name='testing') Login
 
 block scripts
   script(src='/js/index.js')
