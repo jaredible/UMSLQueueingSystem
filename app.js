@@ -32,9 +32,16 @@ app.use(expressSession({
   resave: false,
   saveUninitialized: false,
   cookie: {
-    expires: 10 * 60 * 1000 // 10 minutes
+    expires: 10 * 60 * 1000 // 10 * 60 * 1 second = 10 minutes
   }
 }));
+
+app.use((req, res, next) => {
+  if (req.cookies.user_sid && !req.session.user) {
+    res.clearCookie('user_sid');
+  }
+  next();
+});
 
 app.use('/', indexRouter);
 app.use('/account', accountRouter);

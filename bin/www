@@ -3,30 +3,27 @@
 const app = require('../app');
 const debug = require('debug')('AQS:server');
 const http = require('http');
-const https = require('https');
-const fs = require('fs');
 
 const port = normalizePort(process.env.PORT || 1337);
 const host = 'localhost';
 const env = app.get('env');
 
-var server;
-
-if (env === 'development') {
-  server = http.createServer(app);
-} else {
-  server = https.createServer({
-    host: host,
-    key: null,
-    cert: null
-  }, app);
-}
+const server = http.createServer(app);
+const io = require('socket.io').listen(server);
 
 server.listen(port, host, () => {
   console.log(`${env.charAt(0).toUpperCase() + env.substring(1)} app listening at http://${server.address().address}:${server.address().port}`);
 });
 server.on('error', onError);
 server.on('listening', onListening);
+
+io.on('connection', (socket) => {
+  console.log('Connected successfully to the socket...');
+
+  socket.on('join', function(data) {
+    console.log(data);
+  });
+});
 
 function normalizePort(val) {
   var port = parseInt(val, 10);

@@ -4,13 +4,15 @@ block head
   link(rel='stylesheet', href='/css/index.css')
 
 block content
-  div(class='row')
-    each option in options
-      div(class='col-md-4')
-        div(class='card mt-3 mb-2')
-          div(class='card-body')
-            h5(class='card-title') Card title
-            p(class='card-text') #{option.text}
+  if options
+    div(class='row')
+      each option in options
+        div(class='col-xs-8 col-sm-6 col-md-4')
+          a(class='card-clickable', href='#')
+            div(class='card mt-3 mb-2')
+              div(class='card-body')
+                h5(class='card-title') #{option.title}
+                p(class='card-text') #{option.text}
 
 block scripts
   script(src='/js/index.js')
