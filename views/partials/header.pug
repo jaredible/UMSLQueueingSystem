@@ -1,1 +1,13 @@
-| Header
+nav(class='navbar navbar-expand-lg navbar-light bg-light')
+  a(class='navbar-brand', href='/')
+    img(src='/img/brand.png', width='30', height='30', class='d-inline-block align-top', alt='')
+    |  AQS
+  button(type='button', class='navbar-toggler', data-toggle='collapse', data-target='#navbarNavDropdown')
+    span(class='navbar-toggler-icon')
+  div(id='navbarNavDropdown', class='collapse navbar-collapse')
+    div(class='navbar-nav')
+      a(class='nav-item nav-link active', href='/')
+        | Home 
+      a(class='nav-item nav-link' href='/calendar') Calendar
+    form(id='formLogout', class='form-inline', action='/account/logout', method='post')
+      button(type='button', class='btn btn-outline-primary') Log Out

@@ -8,7 +8,9 @@ const expressValidator = require('express-validator');
 const expressSession = require('express-session');
 
 const indexRouter = require('./routes/index');
-const loginRouter = require('./routes/login');
+const accountRouter = require('./routes/account');
+const dashboardRouter = require('./routes/dashboard');
+const testRouter = require('./routes/test');
 
 const app = express();
 
@@ -35,6 +37,9 @@ app.use(expressSession({
 }));
 
 app.use('/', indexRouter);
+app.use('/account', accountRouter);
+app.use('/dashboard', dashboardRouter);
+app.use('/test', testRouter);
 
 app.use((req, res, next) => {
   var err = new Error('Not Found');

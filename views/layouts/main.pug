@@ -7,9 +7,10 @@ html(lang='en', dir='ltr')
       include ../partials/header.pug
 
     main
-      block content
+      div(class='container')
+        block content
 
-    footer
+    footer(class='page-footer font-small')
       include ../partials/footer.pug
 
     include ../partials/scripts.pug

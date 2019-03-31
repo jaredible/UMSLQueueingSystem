@@ -1,0 +1,24 @@
+doctype html
+html(lang='en', dir='ltr')
+  include partials/head.pug
+  link(rel='stylesheet', href='/css/login.css')
+  body
+    main
+      div(class='container')
+        form(id='formLogin', action='/account/login', method='post')
+          div(class='form-group')
+            label(for='inputEmail') Email
+            input(type='email', id='inputEmail' class='form-control', placeholder='Email', required, autofocus)
+          div(class='form-group')
+            label(for='inputPassword') Password
+            input(type='password', id='inputPassword' class='form-control', placeholder='Password', required)
+          div(class='form-check')
+            input(type='checkbox', id='inputCheck', class='form-check-input')
+            label(for='inputCheck', class='form-check-label') Remember me
+          button(type='submit', class='btn btn-primary') Log In
+
+    footer(class='page-footer font-small')
+      include partials/footer.pug
+    
+    include partials/scripts.pug
+    script(src='/js/login.js')
