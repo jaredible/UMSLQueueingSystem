@@ -1,4 +1,6 @@
 $(function() {
   console.log('testing');
-  var a = $('#calendar')
+  $('#calendar').fullCalendar({
+    editable: true
+  });
 });
