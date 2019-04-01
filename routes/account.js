@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const accountController = require('../controllers/accountController');
+const accountController = require('../controllers/account');
 
 const sessionChecker = (req, res, next) => {
   if (req.session.user && req.cookies.user_sid) {

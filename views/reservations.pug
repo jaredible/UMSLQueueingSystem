@@ -4,9 +4,13 @@ block head
   link(rel='stylesheet', href='/css/reservations.css')
 
 block content
+  div(id='result')
+  div(id='btn-dropbox')
   div(id='calendar')
 
 block scripts
   script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js')
+  script(src='https://apis.google.com/js/api.js?onload=loadPicker')
+  script(src='https://www.dropbox.com/static/api/2/dropins.js' id='dropboxjs' data-app-key='dp7k3r2vfdp7mbh')
   script(src='/js/reservations.js')
